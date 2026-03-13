@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary: rgba(0, 132, 255, 1);
+    --primary-hover: rgba(0, 113, 233, 1);
+    --input-bgcolor: rgba(128, 128, 128, .05);
+    --input-bgcolor-hover: rgba(128, 128, 128, .1);
+    --paragraph-color: #666;
+    --h2-color: rgba(0, 0, 0, .5);
+    --input-border-color: #CCC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+}
+
+html, body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
+.container {
+    position: relative;
+    width: 26vw;
+    height: auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .2);
+    row-gap: 80px;
+}
+ 
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+ 
+h1 {
+    font-size: 2rem;
+    color: var(--paragraph-color);
+    font-weight: 300;
+    text-align: center;
+}
+ 
+h2 {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--h2-color);
+    font-weight: 300;
+}
+ 
+.pseudo-container, .mdp-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 5px;
+    margin: 0;
+}
+ 
+.pseudo-container p, .mdp-container p {
+    margin: 0;
+}
+ 
+p {
+    font-size: 14px;
+    color: var(--paragraph-color);
+}
+ 
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+}
+ 
+form input[type="pseudo"],
+form input[type="password"] {
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+    border: 1px solid var(--input-bgcolor);
+    border-radius: 15px;
+    font-size: 14px;
+    text-indent: 15px;
+    background-color: var(--input-bgcolor);
+}
+ 
+form input[type="pseudo"]:hover,
+form input[type="password"]:hover {
+    background-color: var(--input-bgcolor-hover);
+}
+ 
+form input[type="submit"] {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+ 
+form input[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+ 
+.connexion-link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.connexion-link-container a {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
