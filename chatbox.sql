@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 14 fév. 2026 à 11:45
+-- Généré le : ven. 13 mars 2026 à 15:04
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -19,11 +19,10 @@ SET time_zone = "+00:00";
 
 --
 -- Base de données : `chatbox`
-
-CREATE DATABASE IF NOT EXISTS `chatbox`;
-USE `chatbox`;
-
 --
+
+CREATE DATABASE IF NOT EXISTS `chatbox` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `chatbox`;
 
 -- --------------------------------------------------------
 
@@ -67,10 +66,6 @@ CREATE TABLE `messages` (
 -- Déchargement des données de la table `messages`
 --
 
-INSERT INTO `messages` (`idm`, `pseudo`, `message`, `date`, `destinataire`) VALUES
-(6, 'Test', 'Bonjour ! ', '2026-02-14 11:25:39', 'General'),
-(8, 'Test', 'Bonjour', '2026-02-14 11:28:20', 'General');
-
 --
 -- Déclencheurs `messages`
 --
@@ -91,20 +86,16 @@ DELIMITER ;
 CREATE TABLE `users` (
   `idu` int(11) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
-  `mdp` varchar(50) NOT NULL
+  `mdp` varchar(100) NOT NULL,
+  `role` varchar(10) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`idu`, `pseudo`, `mdp`) VALUES
-(1, 'Test', 'Test'),
-(2, 'Test2', 'Test2');
 
 --
 -- Index pour les tables déchargées
 --
+
+INSERT INTO `users` (`idu`, `pseudo`, `mdp`, `role`) VALUES
+  (1, 'Admin', '$2y$10$Oe0/rWbRSWoQ.TrqyMFPieI6IovL1LCE8A99t8SLyh3aigdi3eleW', 'admin');
 
 --
 -- Index pour la table `archives_messages`
@@ -144,7 +135,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

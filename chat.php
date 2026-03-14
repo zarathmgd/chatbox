@@ -42,6 +42,9 @@
 <body>
      
     <a href="deconnexion.php">Se déconnecter</a>
+    <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+        <a href="admin.php" class="user-list-link">Liste des utilisateurs</a>
+    <?php endif; ?>
     <div class="container">
         <h1>Chatbox</h1>
         <div class="messages">

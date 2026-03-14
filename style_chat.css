@@ -219,6 +219,15 @@ select {
     border-color: var(--input-border-color);
 }
 
+.user-list-link, .return-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    color: var(--paragraph-color);
+    font-size: 0.8rem;
+}
+
 *:focus {
     outline: none;
     border-color: var(--primary) !important;

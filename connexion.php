@@ -10,7 +10,7 @@
             die("Erreur de connexion à la base de données.");
         }
 
-        $requete = "SELECT pseudo, mdp FROM users WHERE pseudo = ?";
+        $requete = "SELECT pseudo, mdp, role FROM users WHERE pseudo = ?";
         $stmt = mysqli_prepare($id, $requete);
         mysqli_stmt_bind_param($stmt, "s", $pseudo);
         mysqli_stmt_execute($stmt);
@@ -21,6 +21,7 @@
             if(password_verify($mdp, $ligne['mdp'])){
                 // Succès : on ouvre la session
                 $_SESSION["pseudo"] = $ligne['pseudo'];
+                $_SESSION["role"] = $ligne['role'];
                 header("location: chat.php");
                 exit;
             } else {
