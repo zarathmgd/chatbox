@@ -28,3 +28,18 @@ Le code a été renforcé pour contrer les vulnérabilités web les plus courant
 1. **Cloner le dépôt :**
    ```bash
    git clone https://github.com/zarathmgd/chatbox.git
+
+2. **Préparer le serveur web :**
+Placez le dossier du projet dans le répertoire de votre serveur web local (ex: htdocs pour XAMPP ou www pour WAMP).
+
+3. **Initialiser la base de données :**
+
+   - Créez une base de données nommée chatbox via phpMyAdmin ou un autre client SQL.
+   - Importez le script chatbox.sql (situé à la racine du projet) pour générer les tables et le Trigger d'archivage.
+
+4. **Lancer l'application :**
+Accédez à l'application via votre navigateur : http://localhost/chatbox/connexion.php
+
+Compte administrateur créer par défaut : **Pseudo : Admin / Mot de passe : Admin123456!**
+
+## Projet développé par Zarath Mougamadou - BTS SIO. 
